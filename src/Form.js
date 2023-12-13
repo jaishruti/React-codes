@@ -10,6 +10,8 @@ export default function Form() {
   const handleClear = () => {
     setInput("");
   };
+
+  //state change is handled using hooks9ex- useState
   const [inputData, setInput] = useState("");
   return (
     <div>
@@ -22,6 +24,7 @@ export default function Form() {
           placeholder="Enter your name"
           className="border-solid border-black border-[2px]"
         />
+        {/* events are handled using props(onclick, onchange) and passing the function to be invoked when event taking place */}
         <button
           className="m-1 p-2 bg-gray-500 text-white "
           onClick={handleClear}
