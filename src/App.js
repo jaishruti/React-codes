@@ -3,6 +3,7 @@ import "./App.css";
 import Counter from "./Counter.js";
 import Form from "./Form.js";
 import Product from "./Product.js";
+import Tour from "./tour-component/Tour.js";
 
 const data = [
   {
@@ -28,6 +29,7 @@ function App() {
       <Form />
       {/* //display products */}
       {products}
+      <Tour />
     </div>
   );
 }
