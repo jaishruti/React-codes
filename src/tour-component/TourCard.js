@@ -19,22 +19,28 @@ export default function TourCard({ id, name, des, img, removeTour }) {
   //     props.func(id);
   //   };
   return (
-    <Card className="{img} w-[100vh] ">
-      <img
-        src="../assests/birla-planetarium.jpg"
-        alt="vict shown"
-        width={100}
-      ></img>
-      <h1>{name}</h1>
-      <p>
+    <Card className="{id} w-[100vh] bg-gray-200 rounded-lg  p-5">
+      <img src={img} alt="vict shown"></img>
+      <h1 className="font-semibold text-blue-700">{name}</h1>
+      <p className="p-3 ">
         {descrip}
         <span>{enableReadmore && "..."}</span>
-        <span onClick={clickReadmoreHandler}>
-          {enableReadmore ? "read more" : "show less"}
+        <span
+          onClick={clickReadmoreHandler}
+          className="text-blue-700 hover:text-red-500 underline"
+        >
+          {enableReadmore ? " read more" : " show less"}
         </span>
       </p>
       {/* onclick of this button we want to delete that card */}
-      <button onClick={() => removeTour(id)}>Not interested</button>
+      <div className="w-full flex justify-end">
+        <button
+          className=" bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+          onClick={() => removeTour(id)}
+        >
+          Not interested
+        </button>
+      </div>
     </Card>
   );
 }
