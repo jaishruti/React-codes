@@ -18,9 +18,10 @@ const data = [
 
 // definig products here
 // {/* rendering product from Product component */}
-let products = data.map((ele) => {
-  return <Product name={ele.name} price={ele.price} />;
-});
+//if your adding {}, add return also otherwise direct return element non need of return keyword
+let products = data.map((ele) => (
+  <Product key={ele.id} name={ele.name} price={ele.price} />
+));
 
 function App() {
   return (
