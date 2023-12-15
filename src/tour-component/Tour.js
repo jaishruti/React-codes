@@ -11,11 +11,21 @@ export default function Tour() {
     console.log(tourAfterRemove);
     setdataTour(tourAfterRemove);
   }
+
+  //onclick of refresh button restore data
+  function refresh() {
+    setdataTour(tours);
+  }
   return (
-    <div className="flex flex-col gap-[1.5rem]">
-      {dataTour.map((data) => {
-        return <TourCard {...data} removeTour={removeTour}></TourCard>;
-      })}
+    <div>
+      <h1>Using React component displaying Tour places</h1>
+      {/* make refresh button appear only when no data is left to be shown */}
+      {dataTour.length === 0 && <button onClick={refresh}>Refresh</button>}
+      <div className="flex flex-col gap-[1.5rem]">
+        {dataTour.map((data) => {
+          return <TourCard {...data} removeTour={removeTour}></TourCard>;
+        })}
+      </div>
     </div>
   );
 }
