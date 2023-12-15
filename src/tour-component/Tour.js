@@ -19,6 +19,11 @@ export default function Tour() {
   return (
     <div>
       <h1>Using React component displaying Tour places</h1>
+      {dataTour.length !== 0 && (
+        <p >
+          Total Tours showing <span>{dataTour.length}</span>
+        </p>
+      )}
       {/* make refresh button appear only when no data is left to be shown */}
       {dataTour.length === 0 && <button onClick={refresh}>Refresh</button>}
       <div className="flex flex-col gap-[1.5rem]">
