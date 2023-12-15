@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../Card";
 
-export default function TourCard({ id, name, des, img }, props) {
+export default function TourCard({ id, name, des, img, removeTour }) {
   const [enableReadmore, setReadmore] = useState(true);
   const [descrip, setDescrip] = useState(des.substring(0, 200));
 
@@ -34,7 +34,7 @@ export default function TourCard({ id, name, des, img }, props) {
         </span>
       </p>
       {/* onclick of this button we want to delete that card */}
-      <button onClick={() => props.func(id)}>Not interested</button>
+      <button onClick={() => removeTour(id)}>Not interested</button>
     </Card>
   );
 }
