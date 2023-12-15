@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../Card";
 
-export default function TourCard({ id, name, des, img, removeTour }) {
+export default function TourCard({ id, name, des, img, link, removeTour }) {
   const [enableReadmore, setReadmore] = useState(true);
   const [descrip, setDescrip] = useState(des.substring(0, 200));
 
@@ -21,7 +21,14 @@ export default function TourCard({ id, name, des, img, removeTour }) {
   return (
     <Card className="{id} w-[100vh] bg-gray-200 rounded-lg  p-5">
       <img src={img} alt="vict shown"></img>
-      <h1 className="font-semibold text-blue-700">{name}</h1>
+      <a
+        href={link}
+        className="font-semibold text-blue-700 hover:underline"
+        // target="_blank"
+        title="Click to visit page"
+      >
+        {name}
+      </a>
       <p className="p-3 ">
         {descrip}
         <span>{enableReadmore && "..."}</span>

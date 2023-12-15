@@ -28,13 +28,17 @@ export default function Tour() {
       )}
       {/* make refresh button appear only when no data is left to be shown */}
       {dataTour.length === 0 && (
-        <button onClick={refresh} className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button
+          onClick={refresh}
+          className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+        >
           Refresh
         </button>
       )}
       <div className="flex flex-col gap-[1.5rem] mt-4">
+        {/* good practice: pass unique identifier when map is used(id/index) */}
         {dataTour.map((data) => {
-          return <TourCard {...data} removeTour={removeTour}></TourCard>;
+          return <TourCard key ={data.id} {...data} removeTour={removeTour}></TourCard>;
         })}
       </div>
     </div>
