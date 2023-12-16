@@ -4,6 +4,7 @@ import Counter from "./Counter.js";
 import Form from "./Form.js";
 import Product from "./Product.js";
 import Tour from "./tour-component/Tour.js";
+import UseEffect from "./use-effect/UseEffect.js";
 
 const data = [
   {
@@ -30,7 +31,8 @@ function App() {
       <Form />
       {/* //display products */}
       {products}
-      <Tour />
+    <Tour />
+      <UseEffect />
     </div>
   );
 }
